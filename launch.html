@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Loose Ends</title>
+
+<!-- This is the icon iOS actually reads for "Add to Home Screen" ---
+     the claude.ai/artifact link can't supply one because that page's
+     content runs inside a sandboxed iframe on a different origin, and
+     Safari only ever looks at the TOP-level page's own <link> tags. This
+     little page IS the top-level page, so its icon sticks. -->
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="icon" type="image/png" href="icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Loose Ends">
+<meta name="theme-color" content="#1D1C1A">
+
+<style>
+  html, body { margin: 0; height: 100%; background: #1D1C1A; }
+  body { display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+  img { width: 88px; height: 88px; border-radius: 20px; margin-bottom: 28px; }
+  a.open-link {
+    display: inline-block; text-decoration: none;
+    background: #F1F0EC; color: #1D1C1A; font-size: 17px; font-weight: 600;
+    padding: 14px 34px; border-radius: 12px;
+  }
+  a.open-link:active { opacity: 0.8; }
+  p.hint { color: #7A776E; font-size: 12.5px; margin-top: 22px; max-width: 260px; text-align: center; line-height: 1.5; }
+</style>
+</head>
+<body>
+  <!-- Deliberately NOT auto-redirecting: an instant redirect would fire
+       before you get a chance to open the Share sheet and add THIS page
+       (with its real icon) to the Home Screen — you'd end up adding the
+       claude.ai page it jumped to instead, with the wrong icon again.
+       So this page waits for a real, deliberate tap every time. -->
+  <img src="icon.png" alt="">
+  <a class="open-link" id="open-btn" href="https://claude.ai/artifact/2FUgH8gpYk6YdgaPaJwRXh" target="_top" rel="noopener">Open Loose Ends</a>
+  <p class="hint">Add this page to your Home Screen (not the claude.ai link) to keep this icon.</p>
+</body>
+</html>
