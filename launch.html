@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Loose Ends</title>
+
+<!-- This is the icon iOS actually reads for "Add to Home Screen" ---
+     the claude.ai/artifact link can't supply one because that page's
+     content runs inside a sandboxed iframe on a different origin, and
+     Safari only ever looks at the TOP-level page's own <link> tags. This
+     little page IS the top-level page, so its icon sticks. -->
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="icon" type="image/png" href="icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Loose Ends">
+<meta name="theme-color" content="#1D1C1A">
+
+<style>
+  html, body { margin: 0; height: 100%; background: #1D1C1A; }
+  body { display: flex; align-items: center; justify-content: center; }
+  img { width: 64px; height: 64px; border-radius: 16px; opacity: 0.9; animation: pulse 1.1s ease-in-out infinite; }
+  @keyframes pulse { 0%, 100% { opacity: 0.55; } 50% { opacity: 1; } }
+</style>
+</head>
+<body>
+  <img src="icon.png" alt="">
+  <script>
+    // The real, live-synced app. Hardcoded rather than derived from
+    // anything, same reasoning as ARTIFACT_URL inside the app itself.
+    var ARTIFACT_URL = "https://claude.ai/artifact/2FUgH8gpYk6YdgaPaJwRXh";
+    location.replace(ARTIFACT_URL);
+  </script>
+</body>
+</html>
